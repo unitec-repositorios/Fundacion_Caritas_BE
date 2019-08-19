@@ -20,7 +20,15 @@ app.use(require('./routes/terapeutas'));
 app.use(require('./routes/remision'));
 app.use(require('./routes/recursos_municipales'));
 app.use(require('./routes/pacientes'));
-
+app.use(require('./routes/tratamiento'));
+app.use(require('./routes/municipio'));
+app.use(require('./routes/estado_ocupacion'));
+app.use(require('./routes/estado_civil'));
+app.use(require('./routes/estado_atencion'));
+app.use(require('./routes/educacion'));
+app.use(require('./routes/causa_violencia'));
+app.use(require('./routes/casos'));
+app.use(require('./routes/caso_tipo_violencia'));
 
 app.get('/', (req, res) => {
     res.send('Caritas API');
