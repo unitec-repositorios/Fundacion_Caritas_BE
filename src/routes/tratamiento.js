@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const mySqlConnection = require('../database');
 
-router.get('/api/estadoocupacion', (req, res) => {
-    const query = "select * from VIEW_ESTADO_OCUPACION";
+router.get('/api/tratamiento', (req, res) => {
+    const query = "select * from VIEW_TRATAMIENTO";
     mySqlConnection.query(query,(error,result,fields)=>{
         if(!error){
             if(fields.length !==0){
@@ -17,13 +17,13 @@ router.get('/api/estadoocupacion', (req, res) => {
     });
 });
 
-router.post('/api/estadoocupacion', (req, res) => {
-    const{ESTADO} = req.body;
+router.post('/api/tratamiento', (req, res) => {
+    const{TRATA} = req.body;
     const query = `
-        set @ESTADO = ?;
-        call CREATE_ESTADO_OCUPACION(@ESTADO);
+        set @TRATA = ?;
+        call CREATE_TRATAMIENTO(@TRATA);
     `;
-    mySqlConnection.query(query,[ESTADO],(error,fields)=>{
+    mySqlConnection.query(query,[TRATA],(error,fields)=>{
         if(!error){
             if(fields.length!==0){
                 res.send('OK');
@@ -38,15 +38,15 @@ router.post('/api/estadoocupacion', (req, res) => {
     });
 });
 
-router.put('/api/estadoocupacion/:ID', (req, res) => {
+router.put('/api/tratamiento/:ID', (req, res) => {
     const{ID} = req.params;
-    const{ESTADO} = req.body;
+    const{TRATA} = req.body;
     const query = `
         set @ID = ?;
         set @ESTADO = ?;
-        call UPDATE_ESTADO_OCUPACION(@ID,@ESTADO);
+        call UPDATE_TRATAMIENTO(@ID,@TRATA);
     `;
-    mySqlConnection.query(query,[ID,ESTADO],(error,fields)=>{
+    mySqlConnection.query(query,[ID,TRATA],(error,fields)=>{
         if(!error){
             if(fields.length!==0){
                 res.send('OK');
@@ -61,11 +61,11 @@ router.put('/api/estadoocupacion/:ID', (req, res) => {
     });
 });
 
-router.delete('/api/estadoocupacion/:ID', (req, res) => {
+router.delete('/api/tratamiento/:ID', (req, res) => {
     const{ID} = req.params;
     const query = `
         set @ID = ?;
-        call DELETE_ESTADO_OCUPACION(@ID);
+        call DELETE_TRATAMIENTO(@ID);
     `;
     mySqlConnection.query(query,[ID],(error,fields)=>{
         if(!error){

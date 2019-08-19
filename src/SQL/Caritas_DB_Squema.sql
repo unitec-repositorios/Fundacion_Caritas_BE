@@ -1045,3 +1045,149 @@ CREATE  OR REPLACE ALGORITHM=UNDEFINED DEFINER=`ug1byw8l46zz27st`@`%` SQL SECURI
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- -----------------------------------------------------
+-- Data for table `bjmns7kzvsnubc19qcus`.`UBICACION_VIOLENCIA`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `bjmns7kzvsnubc19qcus`;
+INSERT INTO `bjmns7kzvsnubc19qcus`.`UBICACION_VIOLENCIA` (`id_uviolencia`, `ubicacion`) VALUES (1, 'Urbana');
+INSERT INTO `bjmns7kzvsnubc19qcus`.`UBICACION_VIOLENCIA` (`id_uviolencia`, `ubicacion`) VALUES (2, 'Rural');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `bjmns7kzvsnubc19qcus`.`ESTADO_ATENCION`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `bjmns7kzvsnubc19qcus`;
+INSERT INTO `bjmns7kzvsnubc19qcus`.`ESTADO_ATENCION` (`id_estadoa`, `estado`) VALUES (1, 'Proceso');
+INSERT INTO `bjmns7kzvsnubc19qcus`.`ESTADO_ATENCION` (`id_estadoa`, `estado`) VALUES (2, 'Espera');
+INSERT INTO `bjmns7kzvsnubc19qcus`.`ESTADO_ATENCION` (`id_estadoa`, `estado`) VALUES (3, 'Abandono');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `bjmns7kzvsnubc19qcus`.`MUNICIPIO`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `bjmns7kzvsnubc19qcus`;
+INSERT INTO `bjmns7kzvsnubc19qcus`.`MUNICIPIO` (`id_municipio`, `nombre`) VALUES (1, 'San Pedro Sula');
+INSERT INTO `bjmns7kzvsnubc19qcus`.`MUNICIPIO` (`id_municipio`, `nombre`) VALUES (2, 'La Lima');
+INSERT INTO `bjmns7kzvsnubc19qcus`.`MUNICIPIO` (`id_municipio`, `nombre`) VALUES (3, 'Villanueva');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `bjmns7kzvsnubc19qcus`.`REMISION`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `bjmns7kzvsnubc19qcus`;
+INSERT INTO `bjmns7kzvsnubc19qcus`.`REMISION` (`id_remision`, `juez`) VALUES (1, 'JEVD');
+INSERT INTO `bjmns7kzvsnubc19qcus`.`REMISION` (`id_remision`, `juez`) VALUES (2, 'JEVS');
+INSERT INTO `bjmns7kzvsnubc19qcus`.`REMISION` (`id_remision`, `juez`) VALUES (3, 'JP');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `bjmns7kzvsnubc19qcus`.`RECURSOS_MUNICIPALES`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `bjmns7kzvsnubc19qcus`;
+INSERT INTO `bjmns7kzvsnubc19qcus`.`RECURSOS_MUNICIPALES` (`id_recursos`, `tipo`) VALUES (1, 'UMEP');
+INSERT INTO `bjmns7kzvsnubc19qcus`.`RECURSOS_MUNICIPALES` (`id_recursos`, `tipo`) VALUES (2, 'OMM');
+INSERT INTO `bjmns7kzvsnubc19qcus`.`RECURSOS_MUNICIPALES` (`id_recursos`, `tipo`) VALUES (3, 'ONG');
+INSERT INTO `bjmns7kzvsnubc19qcus`.`RECURSOS_MUNICIPALES` (`id_recursos`, `tipo`) VALUES (4, 'Juzgado');
+INSERT INTO `bjmns7kzvsnubc19qcus`.`RECURSOS_MUNICIPALES` (`id_recursos`, `tipo`) VALUES (5, 'Fiscalia');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `bjmns7kzvsnubc19qcus`.`CAUSA_VIOLENCIA`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `bjmns7kzvsnubc19qcus`;
+INSERT INTO `bjmns7kzvsnubc19qcus`.`CAUSA_VIOLENCIA` (`id_causa`, `causa`) VALUES (1, 'Economica');
+INSERT INTO `bjmns7kzvsnubc19qcus`.`CAUSA_VIOLENCIA` (`id_causa`, `causa`) VALUES (2, 'Infidelidad');
+INSERT INTO `bjmns7kzvsnubc19qcus`.`CAUSA_VIOLENCIA` (`id_causa`, `causa`) VALUES (3, 'Alcholismo');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `bjmns7kzvsnubc19qcus`.`TERAPEUTA`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `bjmns7kzvsnubc19qcus`;
+INSERT INTO `bjmns7kzvsnubc19qcus`.`TERAPEUTA` (`id_terapeuta`, `nombre`) VALUES (1, 'Miriam Fonseca');
+INSERT INTO `bjmns7kzvsnubc19qcus`.`TERAPEUTA` (`id_terapeuta`, `nombre`) VALUES (2, 'Nataly Valle');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `bjmns7kzvsnubc19qcus`.`ESTADO_CIVIL`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `bjmns7kzvsnubc19qcus`;
+INSERT INTO `bjmns7kzvsnubc19qcus`.`ESTADO_CIVIL` (`id_estadoc`, `estado`) VALUES (1, 'Casado');
+INSERT INTO `bjmns7kzvsnubc19qcus`.`ESTADO_CIVIL` (`id_estadoc`, `estado`) VALUES (2, 'Soltero');
+INSERT INTO `bjmns7kzvsnubc19qcus`.`ESTADO_CIVIL` (`id_estadoc`, `estado`) VALUES (3, 'Union Libre');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `bjmns7kzvsnubc19qcus`.`ESTADO_OCUPACION`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `bjmns7kzvsnubc19qcus`;
+INSERT INTO `bjmns7kzvsnubc19qcus`.`ESTADO_OCUPACION` (`id_estado`, `tipo`) VALUES (1, 'Trabajo Remunerado');
+INSERT INTO `bjmns7kzvsnubc19qcus`.`ESTADO_OCUPACION` (`id_estado`, `tipo`) VALUES (2, 'Trabajo No-Remunerado');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `bjmns7kzvsnubc19qcus`.`EDUCACION`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `bjmns7kzvsnubc19qcus`;
+INSERT INTO `bjmns7kzvsnubc19qcus`.`EDUCACION` (`id_educacion`, `tipo`) VALUES (1, 'Analfabeta');
+INSERT INTO `bjmns7kzvsnubc19qcus`.`EDUCACION` (`id_educacion`, `tipo`) VALUES (2, 'Pre-Basica Incompleta');
+INSERT INTO `bjmns7kzvsnubc19qcus`.`EDUCACION` (`id_educacion`, `tipo`) VALUES (3, 'Pre-Basica Completa');
+INSERT INTO `bjmns7kzvsnubc19qcus`.`EDUCACION` (`id_educacion`, `tipo`) VALUES (4, 'Basica Incompleta');
+INSERT INTO `bjmns7kzvsnubc19qcus`.`EDUCACION` (`id_educacion`, `tipo`) VALUES (5, 'Basica Completa');
+INSERT INTO `bjmns7kzvsnubc19qcus`.`EDUCACION` (`id_educacion`, `tipo`) VALUES (6, 'Superior Incompleta');
+INSERT INTO `bjmns7kzvsnubc19qcus`.`EDUCACION` (`id_educacion`, `tipo`) VALUES (7, 'Superior Completa');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `bjmns7kzvsnubc19qcus`.`TIPO_CONDICION`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `bjmns7kzvsnubc19qcus`;
+INSERT INTO `bjmns7kzvsnubc19qcus`.`TIPO_CONDICION` (`id_condicion`, `condicion`) VALUES (1, 'Victima');
+INSERT INTO `bjmns7kzvsnubc19qcus`.`TIPO_CONDICION` (`id_condicion`, `condicion`) VALUES (2, 'Agresor');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `bjmns7kzvsnubc19qcus`.`TIPO_VIOLENCIA`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `bjmns7kzvsnubc19qcus`;
+INSERT INTO `bjmns7kzvsnubc19qcus`.`TIPO_VIOLENCIA` (`id_tipoviolencia`, `tipo`) VALUES (1, 'Violencia Psicologica');
+INSERT INTO `bjmns7kzvsnubc19qcus`.`TIPO_VIOLENCIA` (`id_tipoviolencia`, `tipo`) VALUES (2, 'Violencia Fisica');
+INSERT INTO `bjmns7kzvsnubc19qcus`.`TIPO_VIOLENCIA` (`id_tipoviolencia`, `tipo`) VALUES (3, 'Violencia Economica');
+INSERT INTO `bjmns7kzvsnubc19qcus`.`TIPO_VIOLENCIA` (`id_tipoviolencia`, `tipo`) VALUES (4, 'Violencia Sexual');
+
+COMMIT;
