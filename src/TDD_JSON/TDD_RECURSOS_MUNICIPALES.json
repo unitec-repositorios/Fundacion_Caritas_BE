@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "b9901ddf-8480-4e65-8279-929d5dafcae7",
+		"name": "RECURSOS MUNICIPALES",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET RECURSOS MUNICIPALES",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2366f2c2-2cbc-4bea-81a3-e64335e14ccb",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/recursosmunicipales",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"recursosmunicipales"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST RECURSOS MUNICIPALES",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "688840fc-d847-492e-a774-5b9316689a95",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"RECURSO\" : \"JUEZ\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/recursosmunicipales",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"recursosmunicipales"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT RECURSOS MUNICIPALES",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "230c12dc-8409-4de3-91dd-edd045761d22",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"RECURSO\" : \"JUEZZ\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/recursosmunicipales/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"recursosmunicipales",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE RECURSOS MUNICIPALES",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fd32b5f4-5080-4de1-88dc-3893c4832cb4",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/recursosmunicipales/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"recursosmunicipales",
+						"6"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "e23f739b-24fb-41f8-848a-2c3d25cc5c89",
+		"name": "PACIENTE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET PACIENTE",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dc1dd776-c8a5-4b6e-aa4a-8290deae4660",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/paciente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"paciente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST PACIENTE",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "967a91f5-65c8-4980-b182-009349ce3f55",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"IDEN\":\"421412441\",\n\t\"NOMB\":\"MAX\",\n\t\"APELL\":\"KENTON\",\n\t\"EDAD\": 3,\n\t\"GENERO\":\"M\",\n\t\"OFICIO\":\"ESTUDIANTE\",\n\t\"ESTADOCIVIL\": 1,\n\t\"REMUNERA\":1,\n\t\"EDUACION\": 1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/paciente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"paciente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT PACIENTE",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e00d75bb-d6d7-4865-a91e-d2245758741c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"IDEN\":\"421412441\",\n\t\"NOMB\":\"MAX\",\n\t\"APELL\":\"KENTON\",\n\t\"EDAD\": 3,\n\t\"GENERO\":\"M\",\n\t\"OFICIO\":\"ESTUDIANTE\",\n\t\"ESTADOCIVIL\": 1,\n\t\"REMUNERA\":1,\n\t\"EDUACION\": 1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/paciente/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"paciente",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE PACIENTE",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ef9187d4-1985-4188-a4b9-b66ab4d334e8",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/paciente/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"paciente",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

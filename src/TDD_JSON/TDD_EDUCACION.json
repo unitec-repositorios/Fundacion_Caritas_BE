@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "4375f03a-3a7b-4f1e-94a9-4cf702df0da2",
+		"name": "EDUCACION",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET EDUCACION",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2d49b633-8dbe-4a87-b7c8-2ad6318d834a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/educacion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"educacion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST EDUCACION",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "590cbf8c-3c97-44e3-9713-69bb3acfe24f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"EDU\": \"SUPERIOR DOBLE\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/educacion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"educacion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT EDUCACION",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0b54effa-537d-4bd9-893f-6be669c64db7",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"EDU\": \"SUPERIOR SIMPLE\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/educacion/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"educacion",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE EDUCACION",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "aa5b5951-2500-46f4-8712-c8cd09ea2a3b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/educacion/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"educacion",
+						"8"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

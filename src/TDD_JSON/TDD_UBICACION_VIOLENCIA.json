@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "8006efae-a74b-423c-8b83-1c4f546f4f7a",
+		"name": "UBICACION VIOLENCIA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET UBICACION VIOLENCIA",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "83c4d04a-d04b-426d-b8a3-2240abd844f0",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/ubicacionviolencia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"ubicacionviolencia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST UBICACION VIOLENCIA",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "73ad74cd-ae1c-4526-b9be-f1fa11a51027",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"UVIOLENCIA\": \"casuales\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/ubicacionviolencia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"ubicacionviolencia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT UBICACION VIOLENCIA",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e77704d8-d1c2-4b30-94a2-1980306f59d9",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"UVIOLENCIA\": \"casual\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/ubicacionviolencia/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"ubicacionviolencia",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE UBICACION VIOLENCIA",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7c7fa178-700a-47a4-b147-44af84f23a74",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/ubicacionviolencia/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"ubicacionviolencia",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

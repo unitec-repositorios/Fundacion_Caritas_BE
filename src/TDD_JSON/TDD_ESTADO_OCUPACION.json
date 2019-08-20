@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "e0a11a93-a382-4bfb-ba43-968dd9d73b0e",
+		"name": "ESTADO OCUPACION",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET ESTADO OCUPACION",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b3011616-cb99-45fb-b68e-492200cfab6a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/estadoocupacion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"estadoocupacion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST ESTADO OCUPACION",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0d5ca9b1-14ec-476f-9b17-cfb21f824761",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"ESTADO\": \"remunerado\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/estadoocupacion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"estadoocupacion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT ESTADO OCUPACION",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3b501638-3ae9-4ed1-9b5d-096d5c633188",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"ESTADO\": \"remuneracion\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/estadoocupacion/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"estadoocupacion",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE ESTADO OCUPACION",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b63651b4-f1ae-4f57-8130-4ad21374c5ba",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/estadoocupacion/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"estadoocupacion",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "fadf2e90-0581-44b3-a0d4-9d3d0c7e111a",
+		"name": "CASO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET CASO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3476fbda-3b80-4066-a396-16d6cadbda32",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/caso",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"caso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST CASO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "18b43080-39ac-4775-8440-6df1d44d4732",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"NUMEXP\":\"CWERC\",\n\t\"CANTB\": 2,\n\t\"IDUVIO\":1,\n\t\"IDEAT\":1,\n\t\"IDMUNI\":1,\n\t\"IDREMI\":1,\n\t\"IDREC\":1,\n\t\"IDCAUSA\":1,\n\t\"IDTERA\":1,\n\t\"IDPAC\":1,\n\t\"IDCOND\":1,\n\t\"IDTRATA\":2\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/caso",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"caso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT CASO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "10d3c56b-cec6-4ba2-bd48-de9f70a83f71",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"NUMEXP\":\"CWER55C\",\n\t\"CANTB\": 2,\n\t\"IDUVIO\":1,\n\t\"IDEAT\":1,\n\t\"IDMUNI\":1,\n\t\"IDREMI\":1,\n\t\"IDREC\":1,\n\t\"IDCAUSA\":1,\n\t\"IDTERA\":1,\n\t\"IDPAC\":1,\n\t\"IDCOND\":1,\n\t\"IDTRATA\":2\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/caso/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"caso",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE CASO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f9ce0d25-7292-4569-b161-407fe60104f7",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/caso/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"caso",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

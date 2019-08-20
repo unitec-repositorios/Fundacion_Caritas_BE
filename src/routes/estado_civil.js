@@ -46,7 +46,7 @@ router.put('/api/estadocivil/:ID', (req, res) => {
         set @ESTADO = ?;
         call UPDATE_ESTADO_CIVIL(@ID,@ESTADO);
     `;
-    mySqlConnection.query(query,[ID,RECURSO],(error,fields)=>{
+    mySqlConnection.query(query,[ID,ESTADO],(error,fields)=>{
         if(!error){
             if(fields.length!==0){
                 res.send('OK');

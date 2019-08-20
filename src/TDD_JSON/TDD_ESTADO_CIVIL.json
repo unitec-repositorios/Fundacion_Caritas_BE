@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "69b961ad-68f1-4314-a787-c6877bb9bfef",
+		"name": "ESTADO CIVIL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET ESTADO CIVIL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6ce10d68-efa1-4979-a560-f9c12977718e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/estadocivil",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"estadocivil"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST ESTADO CIVIL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0617b263-c470-4631-bafc-bb4a6c30b283",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"ESTADO\": \"VIUDO\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/estadocivil",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"estadocivil"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT ESTADO CIVIL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "952d83f7-22ab-45e0-9b01-413efe499e4a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"ESTADO\": \"VIUDA\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/estadocivil/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"estadocivil",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE ESTADO CIVIL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f74511cc-40c3-493e-b0a9-4d01c10d19d7",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/estadocivil/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"estadocivil",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
