@@ -18,7 +18,7 @@ router.get('/api/caso', (req, res) => {
 });
 
 router.post('/api/caso', (req, res) => {
-    const{NUMEXP,CANTB,IDUVIO,IDEAT,IDMUNI,IDREMI,IDREC,IDCAUSA,IDTERA,IDPAC,IDCOND} = req.body;
+    const{NUMEXP,CANTB,IDUVIO,IDEAT,IDMUNI,IDREMI,IDREC,IDCAUSA,IDTERA,IDPAC,IDCOND,IDTRATA} = req.body;
     const query = `
         set @NUMEXP = ?;
         set @CANTB = ?;
@@ -31,9 +31,10 @@ router.post('/api/caso', (req, res) => {
         set @IDTERA = ?;
         set @IDPAC = ?;
         set @IDCOND = ?;
-        call CREATE_CASO(@NUMEXP,@CANTB,@IDUVIO,@IDEAT,@IDMUNI,@IDREMI,@IDREC,@IDCAUSA,@IDTERA,@IDPAC,@IDCOND);    
+        set @IDTRATA = ?;
+        call CREATE_CASO(@NUMEXP,@CANTB,@IDUVIO,@IDEAT,@IDMUNI,@IDREMI,@IDREC,@IDCAUSA,@IDTERA,@IDPAC,@IDCOND,@IDTRATA);    
         `;
-    mySqlConnection.query(query,[NUMEXP,CANTB,IDUVIO,IDEAT,IDMUNI,IDREMI,IDREC,IDCAUSA,IDTERA,IDPAC,IDCOND],(error,fields)=>{
+    mySqlConnection.query(query,[NUMEXP,CANTB,IDUVIO,IDEAT,IDMUNI,IDREMI,IDREC,IDCAUSA,IDTERA,IDPAC,IDCOND,IDTRATA],(error,fields)=>{
         if(!error){
             if(fields.length!==0){
                 res.send('OK');
@@ -50,7 +51,7 @@ router.post('/api/caso', (req, res) => {
 
 router.put('/api/caso/:ID', (req, res) => {
     const{ID} = req.params;
-    const{NUMEXP,CANTB,IDUVIO,IDEAT,IDMUNI,IDREMI,IDREC,IDCAUSA,IDTERA,IDPAC,IDCOND} = req.body;
+    const{NUMEXP,CANTB,IDUVIO,IDEAT,IDMUNI,IDREMI,IDREC,IDCAUSA,IDTERA,IDPAC,IDCOND,IDTRATA} = req.body;
     const query = `
         set @NUMEXP = ?;
         set @CANTB = ?;
@@ -63,9 +64,10 @@ router.put('/api/caso/:ID', (req, res) => {
         set @IDTERA = ?;
         set @IDPAC = ?;
         set @IDCOND = ?;
-        call UPDATE_CASO(@ID,@NUMEXP,@CANTB,@IDUVIO,@IDEAT,@IDMUNI,@IDREMI,@IDREC,@IDCAUSA,@IDTERA,@IDPAC,@IDCOND);
+        set @IDTRATA = ?;
+        call UPDATE_CASO(@ID,@NUMEXP,@CANTB,@IDUVIO,@IDEAT,@IDMUNI,@IDREMI,@IDREC,@IDCAUSA,@IDTERA,@IDPAC,@IDCOND,@IDTRATA);
     `;
-    mySqlConnection.query(query,[ID,NUMEXP,CANTB,IDUVIO,IDEAT,IDMUNI,IDREMI,IDREC,IDCAUSA,IDTERA,IDPAC,IDCOND],(error,fields)=>{
+    mySqlConnection.query(query,[ID,NUMEXP,CANTB,IDUVIO,IDEAT,IDMUNI,IDREMI,IDREC,IDCAUSA,IDTERA,IDPAC,IDCOND,IDTRATA],(error,fields)=>{
         if(!error){
             if(fields.length!==0){
                 res.send('OK');
