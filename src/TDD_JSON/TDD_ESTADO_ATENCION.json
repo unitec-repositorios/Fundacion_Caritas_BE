@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "3edc2dc6-433e-4730-9a9c-2a67d54c1c7c",
+		"name": "ESTADO ATENCION",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET ESTADO ATENCION",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "12e2249d-3162-4f3b-a774-ed05df398d92",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/estadoatencion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"estadoatencion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST ESTADO ATENCION",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "107f24c3-6aa4-4854-be04-c8598d1f9d93",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"ESTADO\":\"PROCESO-ABANDONO\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/estadoatencion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"estadoatencion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT ESTADO ATENCION",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "73d695a9-2110-4340-a62c-02ef9a43e6da",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"ESTADO\":\"REMITENTE\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/estadoatencion/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"estadoatencion",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE ESTADO ATENCION",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b7c9ca46-d1c9-49ef-8b1c-7cb1e6ed8844",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/estadoatencion/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"estadoatencion",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

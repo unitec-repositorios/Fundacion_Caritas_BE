@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "109fee39-3f35-4f97-904e-fff01259d9bc",
+		"name": "REMISION",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET REMISION",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "297145ca-7b08-4790-8117-dcdc8be25fa2",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/remision",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"remision"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST REMISION",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e475cf5c-465b-444f-957c-324aa968f321",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"JUEZ\": \"juzgado remitente\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/remision",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"remision"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT REMISION",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "252a8a96-f664-46ed-a8a6-b82abc19644a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"JUEZ\": \"juzgado remitente\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/remision/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"remision",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE REMISION",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "414aeab0-181e-4f42-88fe-18b47434edd1",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/remision/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"remision",
+						"6"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

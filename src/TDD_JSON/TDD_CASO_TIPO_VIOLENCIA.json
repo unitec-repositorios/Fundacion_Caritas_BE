@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "71d9a75b-01b9-4bc8-872c-ef65a4d23af2",
+		"name": "CASO TIPO VIOLENCIA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET CASO TIPO VIOLENCIA",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7acfeddd-d961-43ea-9b47-06f3d313db2f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/casotipoviolencia/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"casotipoviolencia",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST CASO TIPO VIOLENCIA",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6312329c-85e7-478d-bb8e-2cf564f257ca",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"IDCASO\": 3,\n\t\"IDTVIO\": 4\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/casotipoviolencia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"casotipoviolencia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT CASO TIPO VIOLENCIA",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bca10ea7-22d0-4374-b9f7-7966c4cff04f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/javascript",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"IDCASO\": 3,\n\t\"IDTVIO\": 4\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/casotipoviolencia",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"casotipoviolencia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE CASO TIPO VIOLENCIA",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "5658de23-6568-484c-81b2-2a644a807ae0",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/casotipoviolencia/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"casotipoviolencia",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

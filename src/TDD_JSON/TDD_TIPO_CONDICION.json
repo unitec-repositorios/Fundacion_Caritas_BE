@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "732eb48c-0177-402f-b64a-ff508daf7b86",
+		"name": "TIPO CONDICION",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET TIPO CONDICION",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bcd62569-69cb-4b54-894c-f0fa136115bc",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/tipocondicion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tipocondicion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST TIPO CONDICION",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ac7057d6-ecc4-4692-81e0-44dd376cb6c6",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"COND\": \"esclavitud\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/tipocondicion/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tipocondicion",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT TIPO CONDICION",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "87f82f52-1107-4c5a-a10e-536c9f5bda23",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"COND\": \"esclavo\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/tipocondicion/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tipocondicion",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE TIPO CONDICION",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f93e0dc5-a88d-488d-a475-0ad5fec35db6",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/tipocondicion/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tipocondicion",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

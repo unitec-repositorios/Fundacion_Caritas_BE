@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "84a9ebff-864a-4f18-bc84-c68a3888f14a",
+		"name": "TERAPEUTA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET TERAPEUTA",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e50424d6-2ff9-4a68-b095-679c2f55929e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/terapeuta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"terapeuta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST TERAPEUTA",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d38988ee-9535-4bb8-889a-0b06fd95c145",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"NOMB\": \"Mario Flores\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/terapeuta",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"terapeuta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT TERAPEUTA",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9f2b2e9a-9653-48a4-a4a7-990a0444c98b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"NOMB\": \"MARIO\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/terapeuta/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"terapeuta",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE TERAPEUTA",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bf5e6f8a-8c74-4095-8b93-2dff2b62cd6b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/terapeuta/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"terapeuta",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

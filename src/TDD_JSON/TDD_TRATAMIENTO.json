@@ -1,0 +1,178 @@
+{
+	"info": {
+		"_postman_id": "5c7c6627-cee3-4487-b8dd-930f2a0a0218",
+		"name": "TRATAMIENTO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET TRATAMIENTO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "afc3db65-fca6-480f-b641-3f0e9f0c112b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/tratamiento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tratamiento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST TRATAMIENTO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "94b5c823-c749-44df-8a21-334a4cc45d72",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"TRATA\": \"Consejeria\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/tratamiento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tratamiento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT TRATAMIENTO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d928774d-2c33-4d39-ad43-4ec3059ad48e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"TRATA\": \"Consejeria\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/tratamiento/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tratamiento",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE TRATAMIENTO",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3da5cfbf-1b04-489a-b404-9f589b74b4e7",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"SE EJECUTO CORRECTAMENTE\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/tratamiento/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"tratamiento",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
