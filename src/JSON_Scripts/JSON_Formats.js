@@ -73,8 +73,10 @@ module.exports = {
         
         CASOS_TIPO_VIOLENCIA_POST_PUT : function (IDCASOS, IDTIPOVIOLENCIA){
             return ({IDCASO: IDCASOS, IDTVIO: IDTIPOVIOLENCIA});
-        }
+        },
         
-    
+    DEPARTAMENTO_POST_Y_PUT : function(DEPAR){
+        return ({DEP: DEPAR});
+    }
 };
     
