@@ -2,8 +2,8 @@ const express = require('express');
 const router = express.Router();
 const mySqlConnection = require('../database');
 
-router.get('/api/paciente', (req, res) => {
-    const query = "select * from VIEW_PACIENTE";
+router.get('/api/departamento', (req, res) => {
+    const query = "select * from VIEW_DEPARTAMENTO";
     mySqlConnection.query(query,(error,result,fields)=>{
         if(!error){
             if(fields.length !==0){
@@ -17,22 +17,13 @@ router.get('/api/paciente', (req, res) => {
     });
 });
 
-router.post('/api/paciente', (req, res) => {
-    const{IDEN,NOMB,APELL,EDAD,GENERO,OFICIO,ESTADOCIVIL,REMUNERA,EDUACION,DEP} = req.body;
+router.post('/api/departamento', (req, res) => {
+    const{DEP} = req.body;
     const query = `
-        set @IDEN = ?;
-        set @NOMB = ?;
-        set @APELL = ?;
-        set @EDAD = ?;
-        set @GENERO = ?;
-        set @OFICIO = ?;
-        set @ESTADOCIVIL = ?;
-        set @REMUNERA = ?;
-        set @EDUACION = ?;
         set @DEP = ?;
-        call CREATE_PACIENTE(@IDEN,@NOMB,@APELL,@EDAD,@GENERO,@OFICIO,@ESTADOCIVIL,@REMUNERA,@EDUCACION,@DEP);
+        call CREATE_DEPARTAMENTO(@DEP);
     `;
-    mySqlConnection.query(query,[IDEN,NOMB,APELL,EDAD,GENERO,OFICIO,ESTADOCIVIL,REMUNERA,EDUACION,DEP],(error,fields)=>{
+    mySqlConnection.query(query,[DEP],(error,fields)=>{
         if(!error){
             if(fields.length!==0){
                 res.send('OK');
@@ -47,24 +38,15 @@ router.post('/api/paciente', (req, res) => {
     });
 });
 
-router.put('/api/paciente/:ID', (req, res) => {
+router.put('/api/departamento/:ID', (req, res) => {
     const{ID} = req.params;
-    const{IDEN,NOMB,APELL,EDAD,GENERO,OFICIO,ESTADOCIVIL,REMUNERA,EDUACION,DEP} = req.body;
+    const{DEP} = req.body;
     const query = `
         set @ID = ?;
-        set @IDEN = ?;
-        set @NOMB = ?;
-        set @APELL = ?;
-        set @EDAD = ?;
-        set @GENERO = ?;
-        set @OFICIO = ?;
-        set @ESTADOCIVIL = ?;
-        set @REMUNERA = ?;
-        set @EDUACION = ?;
         set @DEP = ?;
-        call UPDATE_PACIENTE(@ID,@IDEN,@NOMB,@APELL,@EDAD,@GENERO,@OFICIO,@ESTADOCIVIL,@REMUNERA,@EDUCACION,@DEP);
+        call UPDATE_DEPARTAMENTO(@ID,@DEP);
     `;
-    mySqlConnection.query(query,[ID,IDEN,NOMB,APELL,EDAD,GENERO,OFICIO,ESTADOCIVIL,REMUNERA,EDUACION,DEP],(error,fields)=>{
+    mySqlConnection.query(query,[ID,DEP],(error,fields)=>{
         if(!error){
             if(fields.length!==0){
                 res.send('OK');
@@ -79,11 +61,11 @@ router.put('/api/paciente/:ID', (req, res) => {
     });
 });
 
-router.delete('/api/paciente/:ID', (req, res) => {
+router.delete('/api/departamento/:ID', (req, res) => {
     const{ID} = req.params;
     const query = `
         set @ID = ?;
-        call DELETE_PACIENTE(@ID);
+        call DELETE_DEPARTAMENTO(@ID);
     `;
     mySqlConnection.query(query,[ID],(error,fields)=>{
         if(!error){

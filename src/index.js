@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+//const JSON_Format = require('../JSON_Scripts/JSON_Formats');
+
 //this is used to solve CORS problem
 const cors = require('cors');
 
@@ -37,4 +39,5 @@ app.get('/', (req, res) => {
 //start the server
 app.listen(app.get('port'), () => {
     console.log(`App listening on port ${app.get('port')}`);
+    //console.log(JSON_Format.USUARIO_POST('marioxe301','holamundo'));
 });
