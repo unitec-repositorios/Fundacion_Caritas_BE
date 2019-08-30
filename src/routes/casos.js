@@ -17,6 +17,25 @@ router.get('/api/caso', (req, res) => {
     });
 });
 
+router.get('/api/caso/:ID', (req, res) => {
+    const{ID}=req.params;
+    const query = `
+        set @ID = ?;
+        call DATOS_CASO(@ID);
+    `;
+    mySqlConnection.query(query,[ID],(error,result,fields)=>{
+        if(!error){
+            if(fields.length !==0){
+                res.send(result);
+            }else{
+                res.send('No hay datos');
+            }
+        }else{
+            res.send('Ocurrio un error al obtener')
+        }
+    });
+});
+
 router.post('/api/caso', (req, res) => {
     const{NUMEXP,CANTB,IDUVIO,IDEAT,IDMUNI,IDREMI,IDREC,IDCAUSA,IDTERA,IDPAC,IDCOND,IDTRATA} = req.body;
     const query = `

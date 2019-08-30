@@ -17,6 +17,25 @@ router.get('/api/paciente', (req, res) => {
     });
 });
 
+router.get('/api/paciente/:ID', (req, res) => {
+    const{ID} = req.params;
+    const query = `
+        set @ID = ?;
+        call DATOS_PACIENTE(@ID);
+    `;
+    mySqlConnection.query(query,[ID],(error,result,fields)=>{
+        if(!error){
+            if(fields.length !==0){
+                res.send(result);
+            }else{
+                res.send('No hay datos');
+            }
+        }else{
+            res.send('Ocurrio un error al obtener')
+        }
+    });
+});
+
 router.post('/api/paciente', (req, res) => {
     const{IDEN,NOMB,APELL,EDAD,GENERO,OFICIO,ESTADOCIVIL,REMUNERA,EDUACION,DEP} = req.body;
     const query = `
