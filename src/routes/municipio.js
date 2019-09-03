@@ -43,7 +43,7 @@ router.put('/api/municipio/:ID', (req, res) => {
     const{MUNI} = req.body;
     const query = `
         set @ID = ?;
-        set @RECURSO = ?;
+        set @MUNI = ?;
         call UPDATE_MUNICIPIO(@ID,@MUNI);
     `;
     mySqlConnection.query(query,[ID,MUNI],(error,fields)=>{
