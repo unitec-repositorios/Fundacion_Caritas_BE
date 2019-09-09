@@ -49,7 +49,7 @@ router.post('/api/paciente', (req, res) => {
         set @REMUNERA = ?;
         set @EDUACION = ?;
         set @DEP = ?;
-        call CREATE_PACIENTE(@IDEN,@NOMB,@APELL,@EDAD,@GENERO,@OFICIO,@ESTADOCIVIL,@REMUNERA,@EDUCACION,@DEP);
+        call CREATE_PACIENTE(@IDEN,@NOMB,@APELL,@EDAD,@GENERO,@OFICIO,@ESTADOCIVIL,@REMUNERA,@EDUACION,@DEP);
     `;
     mySqlConnection.query(query,[IDEN,NOMB,APELL,EDAD,GENERO,OFICIO,ESTADOCIVIL,REMUNERA,EDUACION,DEP],(error,fields)=>{
         if(!error){
