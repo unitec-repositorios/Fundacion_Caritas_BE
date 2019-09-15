@@ -23,4 +23,20 @@ END$$
 
 DELIMITER ;
 
+-- correcion de procedimineto de crear pacientes
+USE `CARITAS`;
+DROP procedure IF EXISTS `CREATE_PACIENTE`;
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `CREATE_PACIENTE`(IDEN VARCHAR(15),NOMB VARCHAR(50),APELL VARCHAR(50),EDAD INT
+,GENERO CHAR,OFICIO VARCHAR(45),ESTADOCIVIL INT,REMUNERA INT,EDUACION INT,DEP INT)
+BEGIN
+insert into PACIENTE (identidad,nombres,apellidos,edad,genero,oficio,id_estadoc,id_estado,id_educacion,id_departamento)
+values(IDEN,NOMB,APELL,EDAD,GENERO,OFICIO,ESTADOCIVIL,REMUNERA,EDUACION,DEP);
+END$$
+
+DELIMITER ;
+
+
 

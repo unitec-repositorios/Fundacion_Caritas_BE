@@ -54,7 +54,7 @@ router.put('/api/municipio/:ID', (req, res) => {
                 res.send('No hay datos');
             }
         }else{
-            res.send(error)
+            res.send(error);
         }
 
 
@@ -75,7 +75,7 @@ router.delete('/api/municipio/:ID', (req, res) => {
                 res.send('No hay datos');
             }
         }else{
-            res.send(error)
+            res.send(error);
         }
     });
 });
