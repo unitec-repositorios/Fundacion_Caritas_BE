@@ -36,12 +36,6 @@ router.get('/api/paciente/:ID', (req, res) => {
     });
 });
 
-router.get('/api/paciente/:ID/:NOMB/:APELL',(req,res)=>{
-    const{ID} = req.params;
-    const query = `
-        
-    `
-});
 
 router.post('/api/paciente', (req, res) => {
     const{IDEN,NOMB,APELL,EDAD,GENERO,OFICIO,ESTADOCIVIL,REMUNERA,EDUACION,DEP} = req.body;
