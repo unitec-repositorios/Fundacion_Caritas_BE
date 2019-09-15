@@ -36,6 +36,13 @@ router.get('/api/paciente/:ID', (req, res) => {
     });
 });
 
+router.get('/api/paciente/:ID/:NOMB/:APELL',(req,res)=>{
+    const{ID} = req.params;
+    const query = `
+        
+    `
+});
+
 router.post('/api/paciente', (req, res) => {
     const{IDEN,NOMB,APELL,EDAD,GENERO,OFICIO,ESTADOCIVIL,REMUNERA,EDUACION,DEP} = req.body;
     const query = `
@@ -49,12 +56,13 @@ router.post('/api/paciente', (req, res) => {
         set @REMUNERA = ?;
         set @EDUACION = ?;
         set @DEP = ?;
-        call CREATE_PACIENTE(@IDEN,@NOMB,@APELL,@EDAD,@GENERO,@OFICIO,@ESTADOCIVIL,@REMUNERA,@EDUCACION,@DEP);
+        call CREATE_PACIENTE(@IDEN,@NOMB,@APELL,@EDAD,@GENERO,@OFICIO,@ESTADOCIVIL,@REMUNERA,@EDUACION,@DEP);
+        select LAST_INSERT_ID() as IDPACIENTE;
     `;
-    mySqlConnection.query(query,[IDEN,NOMB,APELL,EDAD,GENERO,OFICIO,ESTADOCIVIL,REMUNERA,EDUACION,DEP],(error,fields)=>{
+    mySqlConnection.query(query,[IDEN,NOMB,APELL,EDAD,GENERO,OFICIO,ESTADOCIVIL,REMUNERA,EDUACION,DEP],(error,result,fields)=>{
         if(!error){
             if(fields.length!==0){
-                res.send('OK');
+                res.send(result);
             }else{
                 res.send('No hay datos');
             }

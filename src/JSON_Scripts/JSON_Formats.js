@@ -77,6 +77,11 @@ module.exports = {
         
     DEPARTAMENTO_POST_Y_PUT : function(DEPAR){
         return ({DEP: DEPAR});
+    },
+
+    PACIENTES_ID_POST_GET : function(response){
+        const id = response.data[response.data.length-1]
+        return id[0].IDPACIENTE;
     }
 };
     
