@@ -1502,4 +1502,106 @@ END$$
 
 DELIMITER ;
 
+-- Crear la nueva Tabla de Roles
+
+CREATE TABLE `CARITAS`.`ROLES` (
+  `id_rol` INT NOT NULL AUTO_INCREMENT,
+  `rol` VARCHAR(45) NULL,
+  PRIMARY KEY (`id_rol`));
+
+INSERT INTO `CARITAS`.`ROLES` (`id_rol`, `rol`) VALUES ('1', 'Administrador');
+INSERT INTO `CARITAS`.`ROLES` (`id_rol`, `rol`) VALUES ('2', 'Usuario');
+
+-- Alterar tabla de usuarios
+
+ALTER TABLE `CARITAS`.`USUARIO` 
+ADD COLUMN `id_rol` INT NULL AFTER `contraseña`,
+ADD INDEX `fk_USUARIO_1_idx` (`id_rol` ASC);
+ALTER TABLE `CARITAS`.`USUARIO` 
+ADD CONSTRAINT `fk_USUARIO_1`
+  FOREIGN KEY (`id_rol`)
+  REFERENCES `CARITAS`.`ROLES` (`id_rol`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+-- Alterar View de Usuarios
+
+USE `CARITAS`;
+CREATE  OR REPLACE VIEW `VIEW_USUARIO` AS
+select usu.usuario, usu.contraseña, rl.rol from USUARIO usu 
+inner join ROLES rl on usu.id_rol = rl.id_rol;
+
+-- Alter al procedimineto de crear usuarios
+USE `CARITAS`;
+DROP procedure IF EXISTS `CREATE_USUARIO`;
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `CREATE_USUARIO`(user varchar(45),pass varchar(45),rol INT)
+BEGIN
+insert into USUARIO (usuario,contraseña,id_rol) values (user,pass,rol);
+
+END$$
+
+DELIMITER ;
+
+-- Alter al procedimineto de modificar usuarios
+USE `CARITAS`;
+DROP procedure IF EXISTS `UPDATE_USUARIO`;
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE DEFINER=`caritas`@`localhost` PROCEDURE `UPDATE_USUARIO`(USER VARCHAR(45),PASS VARCHAR(45),NUSER VARCHAR(45),ROL INT)
+BEGIN
+update USUARIO set usuario = NUSER, contraseña = PASS, id_rol= ROL where usuario = USER;
+
+END$$
+
+DELIMITER ;
+
+-- Nuevo procedimiento de agregar rol
+USE `CARITAS`;
+DROP procedure IF EXISTS `CREATE_ROLES`;
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE PROCEDURE `CREATE_ROLES` (ROL VARCHAR(45))
+BEGIN
+	insert INTO ROLES (rol) values (ROL);
+END$$
+
+DELIMITER ;
+
+-- Nuevo procedimiento de modificar rol
+USE `CARITAS`;
+DROP procedure IF EXISTS `UPDATE_ROLES`;
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE PROCEDURE `UPDATE_ROLES` (ID INT,ROL VARCHAR(45))
+BEGIN
+ UPDATE ROLES SET rol = ROL where id_rol = ID;
+END$$
+
+DELIMITER ;
+
+-- Nuevo procedimiento de borrar roles
+USE `CARITAS`;
+DROP procedure IF EXISTS `DELETE_ROLES`;
+
+DELIMITER $$
+USE `CARITAS`$$
+CREATE PROCEDURE `DELETE_ROLES` (ID INT)
+BEGIN
+	delete FROM ROLES where id_rol = ID;
+END$$
+
+DELIMITER ;
+
+-- View Roles
+USE `CARITAS`;
+CREATE  OR REPLACE VIEW `VIEW_ROLES` AS
+select * from ROLES;;
+
+
 
