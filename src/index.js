@@ -33,6 +33,7 @@ app.use(require('./routes/causa_violencia'));
 app.use(require('./routes/casos'));
 app.use(require('./routes/caso_tipo_violencia'));
 app.use(require('./routes/departamento'));
+app.use(require('./routes/roles'));
 
 app.get('/', (req, res) => {
     res.send('Caritas API');
