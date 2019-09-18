@@ -37,13 +37,14 @@ router.get('/api/usuarios/:usuario', (req, res) => {
 });
 
 router.post('/api/usuarios', (req, res) => {
-    const{user,pass} = req.body;
+    const{user,pass,rol} = req.body;
     const query = `
         set @user = ?;
         set @pass = ?;
-        call CREATE_USUARIO(@user,@pass);
+        set @rol = ?;
+        call CREATE_USUARIO(@user,@pass,@rol);
     `;
-    mySqlConnection.query(query,[user,pass],(error,result,fields)=>{
+    mySqlConnection.query(query,[user,pass,rol],(error,result,fields)=>{
         if(!error){
             if(fields.length!==0){
                 res.send(result);
@@ -59,15 +60,16 @@ router.post('/api/usuarios', (req, res) => {
 });
 
 router.put('/api/usuarios/:USER', (req, res) => {
-    const{NUSER,PASS} = req.body;
+    const{NUSER,PASS,ROL} = req.body;
     const{USER} = req.params;
     const query = `
         set @USER = ?;
         set @PASS = ?;
         set @NUSER = ?;
-        call UPDATE_USUARIO(@USER,@PASS,@NUSER);
+        set @ROL = ?;
+        call UPDATE_USUARIO(@USER,@PASS,@NUSER,@ROL);
     `;
-    mySqlConnection.query(query,[USER,PASS,NUSER],(error,result,fields)=>{
+    mySqlConnection.query(query,[USER,PASS,NUSER,ROL],(error,result,fields)=>{
         if(!error){
             if(fields.length!==0){
                 res.send(result);

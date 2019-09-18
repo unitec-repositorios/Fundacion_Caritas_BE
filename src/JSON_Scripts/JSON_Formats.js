@@ -1,10 +1,10 @@
 module.exports = {
 
-    USUARIO_POST: function(USUARIO,CONTRASEÑA){
-        return ({user: USUARIO,pass: CONTRASEÑA});
+    USUARIO_POST: function(USUARIO,CONTRASEÑA,ROL){
+        return ({user: USUARIO,pass: CONTRASEÑA,rol:ROL});
     },
-    USUARIO_PUT : function (NUSUARIO,CONTRASEÑA){
-        return ({NUSER: NUSUARIO,PASS: CONTRASEÑA});
+    USUARIO_PUT : function (NUSUARIO,CONTRASEÑA,ROL){
+        return ({NUSER: NUSUARIO,PASS: CONTRASEÑA,ROL:ROL});
     },
     
      UBICACION_VIOLENCIA_POST_Y_PUT : function(UBIVIOLENCIA){
@@ -82,6 +82,10 @@ module.exports = {
     PACIENTES_ID_POST_GET : function(response){
         const id = response.data[response.data.length-1]
         return id[0].IDPACIENTE;
+    },
+
+    ROLES_POST_Y_PUT: function(rol){
+        return ({ROL:rol});
     }
 };
     
