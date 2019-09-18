@@ -56,7 +56,8 @@ router.post('/api/paciente', (req, res) => {
     mySqlConnection.query(query,[IDEN,NOMB,APELL,EDAD,GENERO,OFICIO,ESTADOCIVIL,REMUNERA,EDUACION,DEP],(error,result,fields)=>{
         if(!error){
             if(fields.length!==0){
-                res.send(result);
+                const id_paciente = result.pop();
+                res.send(id_paciente);
             }else{
                 res.send('No hay datos');
             }
