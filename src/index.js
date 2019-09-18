@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const format = require('./JSON_Scripts/JSON_Formats');
 
 //this is used to solve CORS problem
 const cors = require('cors');
