@@ -22,6 +22,7 @@ app.use(require('./routes/terapeutas'));
 app.use(require('./routes/remision'));
 app.use(require('./routes/recursos_municipales'));
 app.use(require('./routes/pacientes'));
+app.use(require('./routes/historial_constancias'));
 app.use(require('./routes/tratamiento'));
 app.use(require('./routes/municipio'));
 app.use(require('./routes/estado_ocupacion'));
