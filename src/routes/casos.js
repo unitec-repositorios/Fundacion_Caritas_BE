@@ -17,6 +17,24 @@ router.get("/api/caso", (req, res) => {
   });
 });
 
+router.get("/api/caso/paciente/:ID", (req, res) => {
+  const { ID } = req.params;
+  const query = `
+  select * from caso where id_paciente=${ID};
+    `;
+  mySqlConnection.query(query, [ID], (error, result, fields) => {
+    if (!error) {
+      if (fields.length !== 0) {
+        res.send(result);
+      } else {
+        res.send("No hay datos");
+      }
+    } else {
+      res.send("Ocurrio un error al obtener");
+    }
+  });
+});
+
 router.get("/api/caso/:ID", (req, res) => {
   const { ID } = req.params;
   const query = `

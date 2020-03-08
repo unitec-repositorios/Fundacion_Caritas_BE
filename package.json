@@ -13,7 +13,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mysql": "^2.17.1",
-    "nodemon": "^1.19.2"
+    "nodemon": "^1.19.2",
+    "numeros_a_letras": "^1.0.7"
   },
   "devDependencies": {}
 }
