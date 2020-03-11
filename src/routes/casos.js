@@ -17,10 +17,10 @@ router.get("/api/caso", (req, res) => {
   });
 });
 
-router.get("/api/caso/paciente/:ID", (req, res) => {
+router.get("/api/caso/detail/:ID", (req, res) => {
   const { ID } = req.params;
   const query = `
-  select * from caso where id_paciente=${ID};
+    select * from view_caso where id_paciente=${ID};
     `;
   mySqlConnection.query(query, [ID], (error, result, fields) => {
     if (!error) {
@@ -112,6 +112,23 @@ router.post("/api/caso", (req, res) => {
       }
     }
   );
+});
+
+router.put("/api/caso/update/:ID", (req, res) => {
+  try {
+    const { ID } = req.params;
+    const { EA } = req.body;
+    const query = `UPDATE caso SET id_estadoa =${EA} WHERE id_caso=${ID};`;
+    mySqlConnection.query(query, (error, result, fields) => {
+      if (!error) {
+        res.send("Ok");
+      } else {
+        res.send("Error");
+      }
+    });
+  } catch (err) {
+    res.send(err.message);
+  }
 });
 
 router.put("/api/caso/:ID", (req, res) => {
