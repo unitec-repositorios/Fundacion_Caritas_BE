@@ -23,7 +23,7 @@ router.get("/api/historial/:ID", (req, res) => {
 router.get("/api/auditoria/paciente/:ID", (req, res) => {
   const { ID } = req.params;
   const query = `
-    select usuario_creacion, usuario_modifico ,fecha_creacion ,fehca_modificacion from paciente where id_paciente = ${ID}
+    select usuario_creacion, usuario_modifico ,fecha_creacion ,fecha_modificacion from paciente where id_paciente = ${ID}
     `;
   mySqlConnection.query(query, [ID], (error, result, fields) => {
     if (!error) {
