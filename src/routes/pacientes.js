@@ -152,16 +152,11 @@ router.put("/api/paciente/:ID", (req, res) => {
 router.delete("/api/paciente/:ID", (req, res) => {
   const { ID } = req.params;
   const query = `
-        set @ID = ?;
-        call DELETE_PACIENTE(@ID);
+  DELETE FROM paciente WHERE id_paciente =${ID};
     `;
   mySqlConnection.query(query, [ID], (error, fields) => {
     if (!error) {
-      if (fields.length !== 0) {
-        res.send("OK");
-      } else {
-        res.send("No hay datos");
-      }
+      res.send("Ok");
     } else {
       res.send(error);
     }
