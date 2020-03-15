@@ -20,7 +20,7 @@ router.get('/api/usuarios', (req, res) => {
 //get usuario por id
 router.get('/api/usuarios/:usuario', (req, res) => {
     const{usuario} = req.params;
-    const query = 'select * from VIEW_USUARIO where usuario = ?'
+    const query = 'select * from VIEW_USUARIO where usuario = ?' 
     mySqlConnection.query(query,[usuario],(error,result,fields)=>{
         if(!error){
             if(fields.length !==0){
