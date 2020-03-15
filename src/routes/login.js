@@ -38,31 +38,39 @@ router.post('/api/signin', (req, res) => {
   }
 });
 
-
-
-router.use('/secure',function(req, res, next) {
-    var token = req.headers['authorization']
-    if (!token) {
-      res.status(401).send({
-        ok: false,
-        message: 'Toket inválido'
-      })
+router.post('/api/login/verificar', verifyToken, (req, res) => {  
+  jwt.verify(req.token, 'secretkey', (err, authData) => {
+    if(err) {
+      res.send(err);
+    } else {
+      res.json({
+        message: 'Post created...',
+        authData
+      });
     }
-  
-    token = token.replace('Bearer ', '')
-  
-    jwt.verify(token, 'password', function(err, token) {
-      if (err) {
-        return res.status(401).send({
-          ok: false,
-          message: 'Toket inválido'
-        });
-      } else {
-        req.token = token
-        next()
-      }
-
-    });
   });
+});
+
+// Verify Token
+function verifyToken(req, res, next) {
+  // Get auth header value
+  const bearerHeader = req.headers['authorization'];
+  // Check if bearer is undefined
+  if(typeof bearerHeader !== 'undefined') {
+    // Split at the space
+    const bearer = bearerHeader.split(' ');
+    // Get token from array
+    const bearerToken = bearer[1];
+    // Set the token
+    req.token = bearerToken;
+    // Next middleware
+    next();
+  } else {
+    // Forbidden
+    res.send('error2');
+  }
+
+}
+
 
 module.exports = router;
