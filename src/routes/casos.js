@@ -212,4 +212,18 @@ router.delete("/api/caso/:ID", (req, res) => {
   });
 });
 
+router.delete("/api/caso/paciente/:ID", (req, res) => {
+  const { ID } = req.params;
+  const query = `
+  DELETE FROM CASO WHERE id_paciente =${ID};
+    `;
+  mySqlConnection.query(query, [ID], (error, fields) => {
+    if (!error) {
+      res.send("Ok");
+    } else {
+      res.send(error);
+    }
+  });
+});
+
 module.exports = router;
