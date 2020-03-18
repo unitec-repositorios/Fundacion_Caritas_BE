@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const jwt = require('jsonwebtoken');
 
 //this is used to solve CORS problem
 const cors = require("cors");
@@ -32,8 +33,8 @@ app.use(require("./routes/causa_violencia"));
 app.use(require("./routes/casos"));
 app.use(require("./routes/caso_tipo_violencia"));
 app.use(require("./routes/departamento"));
-
 app.use(require("./routes/roles"));
+app.use(require("./routes/login"));
 
 app.get("/", (req, res) => {
   res.send("Caritas API");
@@ -44,3 +45,4 @@ app.listen(app.get("port"), () => {
   console.log(`App listening on port ${app.get("port")}`);
   //console.log(format.USUARIO_POST('marioxe301','holamundo'));
 });
+
