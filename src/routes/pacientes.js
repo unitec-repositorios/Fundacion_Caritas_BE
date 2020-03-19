@@ -4,7 +4,7 @@ const mySqlConnection = require("../database");
 
 router.get("/api/paciente", (req, res) => {
   const query =
-    "select id_paciente, identidad, nombres, apellidos, edad, genero, oficio, id_estadoc, id_estado, id_educacion from paciente";
+    "select id_paciente, identidad, nombres, apellidos, edad, genero, oficio, id_estadoc, id_estado, id_educacion, id_departamento from paciente";
   mySqlConnection.query(query, (error, result, fields) => {
     if (!error) {
       if (fields.length !== 0) {
@@ -105,9 +105,10 @@ router.put("/api/paciente/update/:ID", (req, res) => {
       oficio,
       id_estadoc,
       id_estado,
-      id_educacion
+      id_educacion,
+      id_departamento
     } = req.body;
-    const query = `UPDATE paciente SET identidad = '${identidad}', nombres = '${nombres}', apellidos = '${apellidos}', edad = ${edad}, genero = '${genero}', oficio = '${oficio}', id_estadoc = ${id_estadoc}, id_estado = ${id_estado}, id_educacion = ${id_educacion} WHERE id_paciente = ${ID};`;
+    const query = `UPDATE paciente SET identidad = '${identidad}', nombres = '${nombres}', apellidos = '${apellidos}', edad = ${edad}, genero = '${genero}', oficio = '${oficio}', id_estadoc = ${id_estadoc}, id_estado = ${id_estado}, id_educacion = ${id_educacion}, id_departamento = ${id_departamento} WHERE id_paciente = ${ID};`;
     mySqlConnection.query(query, (error, result, fields) => {
       if (!error) {
         res.send("Ok");
