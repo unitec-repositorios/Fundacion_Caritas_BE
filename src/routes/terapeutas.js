@@ -19,7 +19,7 @@ router.get("/api/terapeuta", (req, res) => {
 
 router.get("/api/terapeuta/:ID", (req, res) => {
   const { ID } = req.params;
-  const query = `select * from terapeuta where id_terapeuta=${ID};`;
+  const query = `select * from TERAPEUTA where id_terapeuta=${ID};`;
   mySqlConnection.query(query, (error, result, fields) => {
     if (!error) {
       if (fields.length !== 0) {

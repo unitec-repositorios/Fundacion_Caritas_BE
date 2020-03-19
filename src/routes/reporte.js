@@ -7,7 +7,7 @@ const numerosALetras = require("numeros_a_letras");
 router.get("/api/reporte/:ID", (req, res) => {
   const { ID } = req.params;
   const query = `select p.nombres, p.apellidos, c.numero_expediente, r.juez,t.nombre,t.codigo 
-  from paciente p join caso c on p.id_paciente= c.id_paciente 
+  from PACIENTE p join CASO c on p.id_paciente= c.id_paciente 
   join terapeuta t on t.id_terapeuta=c.id_terapeuta
   join remision r on r.id_remision=c.id_remision where p.id_paciente=${ID};`;
   mySqlConnection.query(query, [ID], (error, result, fields) => {

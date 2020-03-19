@@ -21,7 +21,7 @@ router.get("/api/paciente/:ID", (req, res) => {
   const { ID } = req.params;
 
   const query = `
-    select * from paciente where id_paciente = ${ID}
+    select * from PACIENTE where id_paciente = ${ID}
     `;
   mySqlConnection.query(query, [ID], (error, result, fields) => {
     if (!error) {

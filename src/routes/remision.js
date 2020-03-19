@@ -19,7 +19,7 @@ router.get("/api/remision", (req, res) => {
 
 router.get("/api/remision/:ID", (req, res) => {
   const { ID } = req.params;
-  const query = `select * from remision where id_remision=${ID}`;
+  const query = `select * from REMISION where id_remision=${ID}`;
   mySqlConnection.query(query, (error, result, fields) => {
     if (!error) {
       if (fields.length !== 0) {
