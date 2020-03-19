@@ -5,7 +5,7 @@ const mySqlConnection = require("../database");
 router.get("/api/historial/:ID", (req, res) => {
   const { ID } = req.params;
   const query = `
-    select * from HISTORIAL_CONSTANCIA where id_paciente = ${ID}
+    select * from HISTORIAL_CONSTANCIAS where id_paciente = ${ID}
     `;
   mySqlConnection.query(query, [ID], (error, result, fields) => {
     if (!error) {
