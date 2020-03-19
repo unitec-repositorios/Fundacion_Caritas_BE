@@ -6,7 +6,7 @@ const numerosALetras = require("numeros_a_letras");
 //modificar con procedimiento
 router.get("/api/reporte/:ID", (req, res) => {
   const { ID } = req.params;
-  const query = `select p.nombres, p.apellidos, c.numero_expediente, r.juez, t.nombre, t.id_terapeuta from PACIENTE p
+  const query = `select p.nombres, p.apellidos, c.numero_expediente, r.juez, t.nombre, t.codigo from PACIENTE p
   join CASO c on p.id_paciente= c.id_paciente 
   join TERAPEUTA t on t.id_terapeuta=c.id_terapeuta
   join REMISION r on r.id_remision=c.id_remision where p.id_paciente=${ID};`;
