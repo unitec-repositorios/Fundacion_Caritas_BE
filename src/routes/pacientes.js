@@ -3,7 +3,8 @@ const router = express.Router();
 const mySqlConnection = require("../database");
 
 router.get("/api/paciente", (req, res) => {
-  const query = "select * from VIEW_PACIENTE";
+  const query =
+    "select id_paciente, identidad, nombres, apellidos, edad, genero, oficio, id_estadoc, id_estado, id_educacion from paciente";
   mySqlConnection.query(query, (error, result, fields) => {
     if (!error) {
       if (fields.length !== 0) {
@@ -90,6 +91,33 @@ router.post("/api/paciente", (req, res) => {
       }
     }
   );
+});
+
+router.put("/api/paciente/update/:ID", (req, res) => {
+  try {
+    const { ID } = req.params;
+    const {
+      identidad,
+      nombres,
+      apellidos,
+      edad,
+      genero,
+      oficio,
+      id_estadoc,
+      id_estado,
+      id_educacion
+    } = req.body;
+    const query = `UPDATE paciente SET identidad = '${identidad}', nombres = '${nombres}', apellidos = '${apellidos}', edad = ${edad}, genero = '${genero}', oficio = '${oficio}', id_estadoc = ${id_estadoc}, id_estado = ${id_estado}, id_educacion = ${id_educacion} WHERE id_paciente = ${ID};`;
+    mySqlConnection.query(query, (error, result, fields) => {
+      if (!error) {
+        res.send("Ok");
+      } else {
+        res.send("Error");
+      }
+    });
+  } catch (err) {
+    res.send(err.message);
+  }
 });
 
 router.put("/api/paciente/:ID", (req, res) => {
