@@ -4,7 +4,7 @@ const mySqlConnection = require("../database");
 
 router.get("/api/paciente", (req, res) => {
   const query =
-    "select id_paciente, identidad, nombres, apellidos, edad, genero, oficio, id_estadoc, id_estado, id_educacion, id_departamento from paciente";
+    "select id_paciente, identidad, nombres, apellidos, edad, genero, oficio, id_estadoc, id_estado, id_educacion, id_departamento, borrado from paciente";
   mySqlConnection.query(query, (error, result, fields) => {
     if (!error) {
       if (fields.length !== 0) {
@@ -176,6 +176,23 @@ router.put("/api/paciente/:ID", (req, res) => {
       }
     }
   );
+});
+
+router.get("/api/paciente/delete/:ID", (req, res) => {
+  try {
+    const { ID } = req.params;
+    const BORRADO = 0;
+    const query = `UPDATE paciente SET borrado = ${BORRADO} WHERE id_paciente = ${ID};`;
+    mySqlConnection.query(query, (error, result, fields) => {
+      if (!error) {
+        res.send("Ok");
+      } else {
+        res.send("Error");
+      }
+    });
+  } catch (err) {
+    res.send(err.message);
+  }
 });
 
 router.delete("/api/paciente/:ID", (req, res) => {

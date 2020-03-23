@@ -131,6 +131,23 @@ router.put("/api/caso/update/:ID", (req, res) => {
   }
 });
 
+router.get("/api/caso/delete/:ID", (req, res) => {
+  try {
+    const { ID } = req.params;
+    const BORRADO = 0;
+    const query = `UPDATE caso SET borrado = ${BORRADO} WHERE id_paciente = ${ID};`;
+    mySqlConnection.query(query, (error, result, fields) => {
+      if (!error) {
+        res.send("Ok");
+      } else {
+        res.send("Error");
+      }
+    });
+  } catch (err) {
+    res.send(err.message);
+  }
+});
+
 router.put("/api/caso/:ID", (req, res) => {
   const { ID } = req.params;
   const {
