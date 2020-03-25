@@ -131,6 +131,68 @@ router.put("/api/caso/update/:ID", (req, res) => {
   }
 });
 
+router.put("/api/caso/extradata/:ID", (req, res) => {
+  try {
+    const { ID } = req.params;
+    const { tipo_violencia, recursos, causas } = req.body;
+    let tipoViolencia = JSON.stringify(tipo_violencia);
+    let recur = JSON.stringify(recursos);
+    let cau = JSON.stringify(causas);
+    const query = `UPDATE caso SET tipo_violencia = '${tipoViolencia}', recursos = '${recur}', causas = '${cau}' WHERE id_paciente = ${ID};`;
+    mySqlConnection.query(query, (error, result, fields) => {
+      if (!error) {
+        res.send("Ok");
+      } else {
+        res.send(error);
+      }
+    });
+  } catch (err) {
+    res.send(err.message);
+  }
+});
+
+router.put("/api/casoupdate", (req, res) => {
+  try {
+    const {
+      numero_expediente,
+      cantidad_beneficiados,
+      id_uviolencia,
+      id_estadoa,
+      id_municipio,
+      id_remision,
+      id_recursos,
+      id_causa,
+      id_terapeuta,
+      id_paciente,
+      id_condicion,
+      id_tratamiento
+    } = req.body;
+
+    const query = `UPDATE caso SET numero_expediente='${numero_expediente}',
+    cantidad_beneficiados=${cantidad_beneficiados},
+    id_uviolencia=${id_uviolencia},
+    id_estadoa=${id_estadoa},
+    id_municipio=${id_municipio},
+    id_remision=${id_remision},
+    id_recursos=${id_recursos},
+    id_causa=${id_causa},
+    id_terapeuta=${id_terapeuta},
+    id_paciente=${id_paciente},
+    id_condicion=${id_condicion},
+    id_tratamiento=${id_tratamiento}
+      WHERE id_paciente =${id_paciente};`;
+    mySqlConnection.query(query, (error, result, fields) => {
+      if (!error) {
+        res.send("Ok");
+      } else {
+        res.send(error);
+      }
+    });
+  } catch (err) {
+    res.send(err.message);
+  }
+});
+
 router.get("/api/caso/delete/:ID", (req, res) => {
   try {
     const { ID } = req.params;
@@ -177,7 +239,7 @@ router.put("/api/caso/:ID", (req, res) => {
         set @IDPAC = ?;
         set @IDCOND = ?;
         set @IDTRATA = ?;
-        call UPDATE_CASO(@ID,@NUMEXP,@CANTB,@IDUVIO,@IDEAT,@IDMUNI,@IDREMI,@IDREC,@IDCAUSA,@IDTERA,@IDPAC,@IDCOND,@IDTRATA);
+        call UPDATE_CASO(@NUMEXP,@CANTB,@IDUVIO,@IDEAT,@IDMUNI,@IDREMI,@IDREC,@IDCAUSA,@IDTERA,@IDPAC,@IDCOND,@IDTRATA);
     `;
   mySqlConnection.query(
     query,
