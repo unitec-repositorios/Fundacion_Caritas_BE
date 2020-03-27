@@ -18,6 +18,52 @@ router.get("/api/paciente", (req, res) => {
   });
 });
 
+router.post("/api/paciente_creacion/:ID", (req,res) => {
+  const { ID } = req.params;
+  const { usuario } = req.body;
+
+  let date = new Date();
+  let fecha = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+
+  const query =`
+  UPDATE PACIENTE SET fecha_creacion = '${fecha}', usuario_creacion = '${usuario}' WHERE id_paciente = ${ID}
+  `;
+  mySqlConnection.query(query, (error,fields)=>{
+    if(!error){
+        if(fields.length!==0){
+            res.send('OK');
+        }else{
+            res.send('No hay datos');
+        }
+    }else{
+        res.send(error)
+  }})
+});
+
+router.post("/api/paciente_modificacion/:ID", (req,res) => {
+  const { ID } = req.params;
+  const { usuario } = req.body;
+
+  let date = new Date();
+  let fecha = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+
+  const query =`
+  UPDATE PACIENTE SET fecha_modificacion = '${fecha}', usuario_modifico = '${usuario}' WHERE id_paciente = ${ID}
+  `;
+  mySqlConnection.query(query, (error,fields)=>{
+    if(!error){
+        if(fields.length!==0){
+            res.send('OK');
+        }else{
+            res.send('No hay datos');
+        }
+    }else{
+        res.send(error)
+    }})
+});
+
+
+
 router.get("/api/paciente/:ID", (req, res) => {
   const { ID } = req.params;
 
