@@ -138,7 +138,7 @@ router.put("/api/caso/extradata/:ID", (req, res) => {
     let tipoViolencia = JSON.stringify(tipo_violencia);
     let recur = JSON.stringify(recursos);
     let cau = JSON.stringify(causas);
-    const query = `UPDATE caso SET tipo_violencia = '${tipoViolencia}', recursos = '${recur}', causas = '${cau}' WHERE id_paciente = ${ID};`;
+    const query = `UPDATE CASO SET tipo_violencia = '${tipoViolencia}', recursos = '${recur}', causas = '${cau}' WHERE id_paciente = ${ID};`;
     mySqlConnection.query(query, (error, result, fields) => {
       if (!error) {
         res.send("Ok");
@@ -168,7 +168,7 @@ router.put("/api/casoupdate", (req, res) => {
       id_tratamiento
     } = req.body;
 
-    const query = `UPDATE caso SET numero_expediente='${numero_expediente}',
+    const query = `UPDATE CASO SET numero_expediente='${numero_expediente}',
     cantidad_beneficiados=${cantidad_beneficiados},
     id_uviolencia=${id_uviolencia},
     id_estadoa=${id_estadoa},
@@ -197,7 +197,7 @@ router.get("/api/caso/delete/:ID", (req, res) => {
   try {
     const { ID } = req.params;
     const BORRADO = 0;
-    const query = `UPDATE caso SET borrado = ${BORRADO} WHERE id_paciente = ${ID};`;
+    const query = `UPDATE CASO SET borrado = ${BORRADO} WHERE id_paciente = ${ID};`;
     mySqlConnection.query(query, (error, result, fields) => {
       if (!error) {
         res.send("Ok");
