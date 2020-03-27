@@ -14,7 +14,7 @@ router.get("/api/reporte/:ID", (req, res) => {
     if (!error) {
       if (fields.length !== 0) {
         let data = result[0]; //Result of query to data
-        data.date = getDateInLetters();
+        data.fecha = getDateInLetters();
         res.send(data);
       } else {
         res.send("No hay datos");
@@ -23,12 +23,6 @@ router.get("/api/reporte/:ID", (req, res) => {
       res.send("Ocurrio un error al obtener");
     }
   });
-});
-
-router.get("/api/getreporte", (req, res) => {
-  let respuesta = numerosALetras(19);
-  let mes = numerosAMeses(1);
-  res.send(respuesta + mes);
 });
 
 const getDateInLetters = () => {
