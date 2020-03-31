@@ -34,12 +34,13 @@ router.get("/api/terapeuta/:ID", (req, res) => {
 });
 
 router.post("/api/terapeuta", (req, res) => {
-  const { NOMB } = req.body;
+  const { NOMB, COD } = req.body;
   const query = `
         set @NOMB = ?;
-        call CREATE_TERAPEUTA(@NOMB);
+        set @COD = ?;
+        call CREATE_TERAPEUTA(@NOMB,@COD);
     `;
-  mySqlConnection.query(query, [NOMB], (error, fields) => {
+  mySqlConnection.query(query, [NOMB,COD], (error, fields) => {
     if (!error) {
       if (fields.length !== 0) {
         res.send("OK");
@@ -54,13 +55,14 @@ router.post("/api/terapeuta", (req, res) => {
 
 router.put("/api/terapeuta/:ID", (req, res) => {
   const { ID } = req.params;
-  const { NOMB } = req.body;
+  const { NOMB, COD } = req.body;
   const query = `
         set @ID = ?;
         set @NOMB = ?;
-        call UPDATE_TERAPEUTA(@ID,@NOMB);
+        set @COD = ?;
+        call UPDATE_TERAPEUTA(@ID,@NOMB,@COD);
     `;
-  mySqlConnection.query(query, [ID, NOMB], (error, fields) => {
+  mySqlConnection.query(query, [ID, NOMB, COD], (error, fields) => {
     if (!error) {
       if (fields.length !== 0) {
         res.send("OK");
